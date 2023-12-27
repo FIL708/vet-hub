@@ -1,36 +1,60 @@
 import Link from 'next/link';
+import NavbarLink from './NavbarLink';
 
 export default function DesktopNavbar() {
     return (
-        <nav className='flex-none'>
-            <ul className='menu menu-horizontal px-1'>
-                <li>
-                    <Link href='/'>Warsztaty</Link>
-                </li>
-                <li>
-                    <Link href='/'>Blog</Link>
-                </li>
-                <li>
-                    <Link href='/'>Galeria</Link>
-                </li>
-                <li>
-                    <Link href='/'>O nas</Link>
-                </li>
-                <li>
-                    <Link href='/'>Kontakt</Link>
-                </li>
-                <li>
-                    <details>
-                        <summary>Parent</summary>
-                        <ul className='rounded-t-none bg-base-100 p-2'>
+        <nav>
+            <ul className='flex flex-row gap-1'>
+                <li className='flex'>
+                    <div className='dropdown dropdown-hover'>
+                        <div tabIndex={0} role='button' className='p-0'>
+                            <NavbarLink href='/'>Produkty</NavbarLink>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className='menu dropdown-content z-[1] w-fit rounded-box bg-base-100 p-3 shadow'
+                        >
                             <li>
-                                <a>Link 1</a>
+                                <NavbarLink href='/'>Warsztaty</NavbarLink>
                             </li>
                             <li>
-                                <a>Link 2</a>
+                                <NavbarLink href='/'>Warsztaty</NavbarLink>
                             </li>
                         </ul>
-                    </details>
+                    </div>
+                </li>
+                <li>
+                    <NavbarLink href='/'>Warsztaty</NavbarLink>
+                </li>
+                <li>
+                    <NavbarLink href='/'>Blog</NavbarLink>
+                </li>
+                <li>
+                    <NavbarLink href='/'>Galeria</NavbarLink>
+                </li>
+                <li>
+                    <NavbarLink href='/'>O nas</NavbarLink>
+                </li>
+                <li>
+                    <NavbarLink href='/'>Kontakt</NavbarLink>
+                </li>
+                <li>
+                    <div className='dropdown dropdown-end'>
+                        <div tabIndex={0} role='button' className='btn m-1'>
+                            Click
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className='menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow'
+                        >
+                            <li>
+                                <a>Item 1</a>
+                            </li>
+                            <li>
+                                <a>Item 2</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </nav>
