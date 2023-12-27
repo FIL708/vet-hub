@@ -3,7 +3,7 @@ import NavbarLink from '@/components/NavbarLink';
 export default function Home() {
     return (
         <>
-            <h1 className=''>Home Page</h1> <NavbarLink />
+            <h1 className=''>Home Page</h1>
             <div className='dropdown dropdown-hover'>
                 <div tabIndex={0} role='button'>
                     <NavbarLink href='/'>Warsztaty</NavbarLink>
@@ -20,17 +20,6 @@ export default function Home() {
                     </li>
                 </ul>
             </div>
-            <details>
-                <summary>Parent</summary>
-                <ul className='rounded-t-none bg-base-100 p-2'>
-                    <li>
-                        <a>Link 1</a>
-                    </li>
-                    <li>
-                        <a>Link 2</a>
-                    </li>
-                </ul>
-            </details>
         </>
     );
 }
