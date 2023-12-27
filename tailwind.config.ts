@@ -19,6 +19,8 @@ const config: Config = {
                     success: '#84cc16',
                     warning: '#fbbf24',
                     error: '#dc2626',
+                    'card-background': '#eff5f3',
+                    'card-hover': '#c8dfd6',
                 },
             },
         ],

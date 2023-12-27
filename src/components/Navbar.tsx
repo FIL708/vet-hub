@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import plFlag from '@/assets/x.svg';
 
 type NavbarProps = {
     children: React.ReactNode;
@@ -11,7 +12,7 @@ export default function Navbar({ children }: NavbarProps) {
             <input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
             <div className='drawer-content flex flex-col'>
                 {/* Navbar */}
-                <div className='navbar w-full bg-base-300'>
+                <header className='navbar w-full lg:px-12'>
                     <Link href='/' className='flex-1'>
                         <Image
                             src='/logo-nav.png'
@@ -60,9 +61,22 @@ export default function Navbar({ children }: NavbarProps) {
                             <li>
                                 <Link href='/'>Kontakt</Link>
                             </li>
+                            <li>
+                                <details>
+                                    <summary>Parent</summary>
+                                    <ul className='m-0 rounded-t-none bg-base-100 p-2'>
+                                        <li>
+                                            <a>Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a>Link 2</a>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
                         </ul>
                     </div>
-                </div>
+                </header>
                 {children}
             </div>
             <div className='drawer-side'>
@@ -71,13 +85,36 @@ export default function Navbar({ children }: NavbarProps) {
                     aria-label='close sidebar'
                     className='drawer-overlay'
                 ></label>
-                <ul className='menu min-h-full w-80 bg-base-200 p-4'>
+                <ul className='menu menu-md min-h-full w-80 bg-base-200 p-4'>
                     {/* Sidebar content here */}
                     <li>
-                        <a>Sidebar Item 1</a>
+                        <Link href='/products'>Produkty</Link>
+                        <ul>
+                            <li>
+                                <Link href='/'>Biżuteria</Link>
+                            </li>
+                            <li>
+                                <Link href='/'>Stolarstwo</Link>
+                            </li>
+                            <li>
+                                <Link href='/'>Tkactwo</Link>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a>Sidebar Item 2</a>
+                        <Link href='/'>Warsztaty</Link>
+                    </li>
+                    <li>
+                        <Link href='/'>Blog</Link>
+                    </li>
+                    <li>
+                        <Link href='/'>Galeria</Link>
+                    </li>
+                    <li>
+                        <Link href='/'>O nas</Link>
+                    </li>
+                    <li>
+                        <Link href='/'>Kontakt</Link>
                     </li>
                 </ul>
             </div>
