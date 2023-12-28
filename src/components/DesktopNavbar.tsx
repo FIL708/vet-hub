@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import NavbarLink from './NavbarLink';
 import Arrow from '@/assets/arrow.svg';
+import LangSwitcher from './LangSwitcher';
 
 export default function DesktopNavbar() {
     const currentPath = usePathname();
@@ -20,10 +21,10 @@ export default function DesktopNavbar() {
     ));
     return (
         <nav>
-            <ul className='flex flex-row gap-1'>
+            <ul className='flex flex-row items-center gap-1'>
                 <li>
                     <div className='dropdown dropdown-hover'>
-                        <div tabIndex={0} role='button' className='p-0'>
+                        <div tabIndex={0} role='button'>
                             <NavbarLink href='/products'>
                                 Produkty <Arrow className='fill-secondary' />
                             </NavbarLink>
@@ -54,24 +55,7 @@ export default function DesktopNavbar() {
                 {linkList}
 
                 <li>
-                    <div className='dropdown dropdown-end'>
-                        <div
-                            tabIndex={0}
-                            role='button'
-                            className='btn btn-ghost h-7 w-7 rounded-full'
-                        ></div>
-                        <ul
-                            tabIndex={0}
-                            className='menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2'
-                        >
-                            <li>
-                                <a>Item 1</a>
-                            </li>
-                            <li>
-                                <a>Item 2</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <LangSwitcher />
                 </li>
             </ul>
         </nav>

@@ -18,7 +18,7 @@ export default function NavbarLink({
     return (
         <Link
             href={href}
-            className={`relative flex w-fit gap-1 rounded-none px-4 py-2 after:absolute after:left-0 after:top-9 after:h-[3px] after:w-full after:rounded-xl after:bg-primary after:transition after:duration-300 hover:bg-transparent focus:bg-transparent after:content-[""]${isActiveClassName}`}
+            className={`relative flex w-fit items-center gap-1 rounded-none px-4 py-2 after:absolute after:left-0 after:top-9 after:h-[3px] after:w-full after:rounded-xl after:bg-primary after:transition after:duration-300 hover:bg-transparent focus:bg-transparent after:content-[""]${isActiveClassName}`}
         >
             {children}
         </Link>
