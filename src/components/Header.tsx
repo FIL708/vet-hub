@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import plFlag from '@/assets/x.svg';
 import DesktopNavbar from './DesktopNavbar';
 
 export default function Header() {
@@ -13,6 +12,7 @@ export default function Header() {
                         alt='Kram Leszy logo'
                         width={228}
                         height={42}
+                        priority
                     />
                 </Link>
             </div>
