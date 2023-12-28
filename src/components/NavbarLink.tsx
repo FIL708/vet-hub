@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
-type NavbarLink = {
+type NavbarLinkProps = {
     href: string;
     active?: boolean;
 } & { children?: ReactNode };
@@ -10,7 +10,7 @@ export default function NavbarLink({
     href = '/',
     children = 'Link title',
     active = false,
-}: NavbarLink) {
+}: NavbarLinkProps) {
     const isActiveClassName = active
         ? ''
         : ' after:scale-x-0 after:hover:origin-left after:hover:scale-x-100 after:origin-right';

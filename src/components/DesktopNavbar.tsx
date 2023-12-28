@@ -2,8 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import NavbarLink from './NavbarLink';
-import Image from 'next/image';
-import globeIcon from '@/assets/globe.svg';
+import Arrow from '@/assets/arrow.svg';
 
 export default function DesktopNavbar() {
     const currentPath = usePathname();
@@ -25,7 +24,9 @@ export default function DesktopNavbar() {
                 <li>
                     <div className='dropdown dropdown-hover'>
                         <div tabIndex={0} role='button' className='p-0'>
-                            <NavbarLink href='/products'>Produkty</NavbarLink>
+                            <NavbarLink href='/products'>
+                                Produkty <Arrow className='fill-secondary' />
+                            </NavbarLink>
                         </div>
                         <ul
                             tabIndex={0}
@@ -58,14 +59,7 @@ export default function DesktopNavbar() {
                             tabIndex={0}
                             role='button'
                             className='btn btn-ghost h-7 w-7 rounded-full'
-                        >
-                            <Image
-                                src={globeIcon}
-                                width={24}
-                                height={24}
-                                alt='language'
-                            />
-                        </div>
+                        ></div>
                         <ul
                             tabIndex={0}
                             className='menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2'
