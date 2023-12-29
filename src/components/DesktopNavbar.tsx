@@ -21,7 +21,7 @@ export default function DesktopNavbar() {
     ));
     return (
         <nav>
-            <ul className='flex flex-row items-center gap-1'>
+            <ul className='hidden flex-row items-center gap-1 lg:flex'>
                 <li>
                     <div className='dropdown dropdown-hover'>
                         <div tabIndex={0} role='button'>
