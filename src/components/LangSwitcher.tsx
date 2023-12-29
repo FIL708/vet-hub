@@ -9,22 +9,22 @@ export default function LangSwitcher() {
             <div
                 tabIndex={0}
                 role='button'
-                className='flex items-center rounded-2xl border-2 border-transparent p-1 transition hover:border-primary hover:bg-primary-content active:scale-95'
+                className='flex items-center rounded-2xl border-2 border-transparent p-1 transition hover:border-secondary-content hover:bg-primary-content active:scale-95'
             >
                 <Globe className='fill-neutral' />
                 <Arrow className='fill-secondary' />
             </div>
             <ul
                 tabIndex={0}
-                className='menu dropdown-content z-[1] rounded-box bg-base-100 p-2'
+                className='menu dropdown-content z-[1] rounded-box bg-base-100 p-2 shadow-lg'
             >
                 <li>
-                    <a>
+                    <a className='hover:bg-secondary-content'>
                         <PlFlag /> Polski
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a className='hover:bg-secondary-content'>
                         <EnFlag /> Angielski
                     </a>
                 </li>

@@ -31,7 +31,7 @@ export default function DesktopNavbar() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className='menu dropdown-content z-[1] w-fit rounded-box bg-base-100 p-4 shadow'
+                            className='menu dropdown-content z-[1] w-fit rounded-box bg-base-100 p-4 shadow-lg'
                         >
                             <li>
                                 <NavbarLink href='/products'>
