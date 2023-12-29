@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import DesktopNavbar from './DesktopNavbar';
+import MobileNavbar from './MobileNavbar';
 
 export default function Header() {
     return (
@@ -17,6 +18,7 @@ export default function Header() {
                 </Link>
             </div>
             <DesktopNavbar />
+            <MobileNavbar />
         </header>
     );
 }
