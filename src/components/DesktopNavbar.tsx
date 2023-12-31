@@ -16,7 +16,9 @@ export default function DesktopNavbar() {
     ];
     const linkList = links.map((link) => (
         <li key={link.title}>
-            <NavbarLink href={link.href}>{link.title}</NavbarLink>
+            <NavbarLink href={link.href} active={currentPath === link.href}>
+                {link.title}
+            </NavbarLink>
         </li>
     ));
     return (

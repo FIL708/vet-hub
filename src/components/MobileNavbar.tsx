@@ -1,7 +1,11 @@
-import Link from 'next/link';
+'use client';
+
 import DrawerToggle from './DrawerToggle';
+import DrawerLink from './DrawerLink';
+import { usePathname } from 'next/navigation';
 
 export default function MobileNavbar() {
+    const currentPath = usePathname();
     const links = [
         { href: '/events', title: 'Warsztaty' },
         { href: '/blog', title: 'Blog' },
@@ -12,7 +16,9 @@ export default function MobileNavbar() {
 
     const linkList = links.map((link) => (
         <li key={link.title}>
-            <Link href={link.href}>{link.title}</Link>
+            <DrawerLink href={link.href} active={currentPath === link.href}>
+                {link.title}
+            </DrawerLink>
         </li>
     ));
 
@@ -23,19 +29,25 @@ export default function MobileNavbar() {
             </div>
             <h2 className='my-2 text-center text-xl'>Menu</h2>
             <li>
-                <Link href='/products'>Produkty</Link>
+                <DrawerLink
+                    href='/products'
+                    active={currentPath === '/products'}
+                >
+                    Produkty
+                </DrawerLink>
                 <ul>
                     <li>
-                        <Link href='/products'>Biżuteria</Link>
+                        <DrawerLink href='/products'>Biżuteria</DrawerLink>
                     </li>
                     <li>
-                        <Link href='/products'>Tkactwo</Link>
+                        <DrawerLink href='/products'>Tkactwo</DrawerLink>
                     </li>
                     <li>
-                        <Link href='/products'>Stolarstwo</Link>
+                        <DrawerLink href='/products'>Stolarstwo</DrawerLink>
                     </li>
                 </ul>
             </li>
+
             {linkList}
         </ul>
     );

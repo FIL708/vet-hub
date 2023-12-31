@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
 
 type NavbarLinkProps = {
     href: string;
     active?: boolean;
-} & { children?: ReactNode };
+} & { children?: React.ReactNode };
 
 export default function NavbarLink({
     href = '/',
