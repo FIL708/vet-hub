@@ -19,6 +19,8 @@ const config: Config = {
                     success: '#84cc16',
                     warning: '#fbbf24',
                     error: '#dc2626',
+                    'primary-content': '#eff5f3',
+                    'secondary-content': '#c8dfd6',
                 },
             },
         ],

@@ -5,8 +5,6 @@
 :root {
     --foreground-rgb: 26, 28, 26;
     --background: 250, 246, 246;
-    --card-background: #eff5f3;
-    --card-hover: #c8dfd6;
 }
 
 body {
