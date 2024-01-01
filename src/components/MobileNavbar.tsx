@@ -29,6 +29,7 @@ export default function MobileNavbar() {
                 <DrawerToggle type='close' />
             </div>
             <h2 className='my-2 text-center text-xl'>Menu</h2>
+            <div className='divider divider-primary mt-0'></div>
             <li>
                 <DrawerLink
                     href='/products'
