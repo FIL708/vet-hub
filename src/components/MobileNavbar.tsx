@@ -3,6 +3,7 @@
 import DrawerToggle from './DrawerToggle';
 import DrawerLink from './DrawerLink';
 import { usePathname } from 'next/navigation';
+import MobileLangSwitcher from './MobileLangSwitcher';
 
 export default function MobileNavbar() {
     const currentPath = usePathname();
@@ -49,6 +50,8 @@ export default function MobileNavbar() {
             </li>
 
             {linkList}
+
+            <MobileLangSwitcher />
         </ul>
     );
 }

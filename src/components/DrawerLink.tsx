@@ -1,3 +1,4 @@
+import closeDrawer from '@/lib/closeDrawer';
 import Link from 'next/link';
 
 type DrawerLinkProps = {
@@ -10,13 +11,11 @@ export default function DrawerLink({
     children,
     active,
 }: DrawerLinkProps) {
-    const closeDrawer = () => document.getElementById('drawer')?.click();
-
     const isActive = active ? ' border-s-primary' : '';
 
     return (
         <Link
-            onClick={closeDrawer}
+            onClick={() => closeDrawer('drawer')}
             href={href}
             className={`rounded-none border-s-2 border-transparent${isActive}`}
         >
