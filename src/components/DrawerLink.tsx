@@ -17,7 +17,7 @@ export default function DrawerLink({
         <Link
             onClick={() => closeDrawer('drawer')}
             href={href}
-            className={`rounded-none border-s-2 border-transparent${isActive}`}
+            className={`rounded-none border-s-2 border-transparent${isActive} hover:bg-secondary-content`}
         >
             {children}
         </Link>
