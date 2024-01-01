@@ -2,7 +2,12 @@ import Hamburger from '@/assets/hamburger.svg';
 import Close from '@/assets/close.svg';
 
 export default function DrawerToggle({ type }: { type: 'open' | 'close' }) {
-    const Icon = type === 'open' ? <Hamburger /> : <Close />;
+    const Icon =
+        type === 'open' ? (
+            <Hamburger className='fill-neutral' />
+        ) : (
+            <Close className='fill-neutral' />
+        );
 
     return (
         <label
