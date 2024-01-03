@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Drawer from '@/components/Drawer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,11 +15,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang='en'>
+        <html lang='pl'>
             <body className={inter.className}>
-                <Drawer>
-                    <main>{children}</main>
-                </Drawer>
+                <main>{children}</main>
             </body>
         </html>
     );
