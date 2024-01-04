@@ -1,4 +1,5 @@
 import ThemeSwitcher from './ThemeSwitcher';
+import Google from '@/assets/google.svg';
 
 export default function UserDropdown() {
     return (
@@ -25,10 +26,13 @@ export default function UserDropdown() {
                 </button>
                 <ul
                     tabIndex={0}
-                    className='menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow'
+                    className='menu dropdown-content z-[1] w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <ThemeSwitcher />
-                    <button className='btn btn-primary'>Login</button>
+                    <button className='btn btn-secondary text-lg'>
+                        <Google className='h-8 w-8 rounded-full bg-base-100 p-1' />{' '}
+                        Login
+                    </button>
                 </ul>
             </div>
         </div>

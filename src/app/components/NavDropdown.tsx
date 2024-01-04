@@ -23,7 +23,7 @@ export default function NavDropdown() {
                 </button>
                 <ul
                     tabIndex={0}
-                    className='menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow'
+                    className='menu dropdown-content z-[1] w-48 rounded-box border-2 border-base-200 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
                         <a>Item 1</a>
