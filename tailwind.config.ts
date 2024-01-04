@@ -7,8 +7,8 @@ const config: Config = {
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     daisyui: {
-        themes: ['corporate', 'business'],
-        darkTheme: 'business',
+        themes: ['fantasy', 'dracula'],
+        darkTheme: 'dracula',
     },
     plugins: [require('daisyui')],
 };

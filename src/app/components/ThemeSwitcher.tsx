@@ -4,7 +4,7 @@ export default function ThemeSwitcher() {
             <input
                 type='checkbox'
                 className='theme-controller'
-                value='corporate'
+                value='fantasy'
             />
             <svg
                 className='swap-on h-10 w-10 fill-current'
