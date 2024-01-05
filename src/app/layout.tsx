@@ -19,7 +19,7 @@ export default function RootLayout({
         <html lang='pl' data-theme='dracula'>
             <body className={inter.className}>
                 <Header />
-                <main>{children}</main>
+                <main className='flex flex-col items-center'>{children}</main>
             </body>
         </html>
     );

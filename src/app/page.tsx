@@ -10,7 +10,7 @@ export default function Home() {
                 height={100}
                 className='w-full sm:w-1/2'
             />
-            <p className='text-justify'>
+            <p className='text-justify text-lg'>
                 Aby korzystać z wszystkich atrakcji, musisz przywdziać swoją
                 wirtualną maskę klauna! 🤡 Zaloguj się teraz i dołącz do
                 cyrkowej ekipy, bo bez Ciebie to jak przyjęcie urodzinowe bez
