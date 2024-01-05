@@ -1,5 +1,8 @@
+import Link from 'next/link';
 import ThemeSwitcher from './ThemeSwitcher';
 import Google from '@/assets/google.svg';
+import Paw from '@/assets/paw.svg';
+import Person from '@/assets/person.svg';
 
 export default function UserDropdown() {
     return (
@@ -29,9 +32,22 @@ export default function UserDropdown() {
                     className='menu dropdown-content z-[1] w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <ThemeSwitcher />
+                        <Link href='/new-owner'>
+                            <Person className='fill-secondary' />
+                            Dodaj typa
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/new-pet'>
+                            {' '}
+                            <Paw className='fill-secondary' />
+                            Dodaj zwierzaka
+                        </Link>
                     </li>
                     <div className='divider divider-primary m-0'></div>{' '}
+                    <li>
+                        <ThemeSwitcher />
+                    </li>
                     <button className='btn btn-secondary'>
                         <Google className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />{' '}
                         Login
