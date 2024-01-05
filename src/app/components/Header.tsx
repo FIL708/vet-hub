@@ -10,9 +10,9 @@ export default function Header() {
             <div className='navbar-center'>
                 <Link
                     href='/'
-                    className='flex items-center gap-2 rounded-xl p-2 text-3xl text-primary transition hover:bg-base-300 active:scale-95'
+                    className='flex items-center gap-2 rounded-xl p-2 text-xl font-bold text-primary transition hover:bg-base-300 active:scale-95 lg:text-3xl'
                 >
-                    <Logo className='h-12 w-12 fill-primary' />
+                    <Logo className='h-10 w-10 fill-primary lg:h-12 lg:w-12' />
                     VetHub
                 </Link>
             </div>

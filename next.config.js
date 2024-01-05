@@ -25,6 +25,13 @@ const nextConfig = {
 
         return config;
     },
+    images: {
+        remotePatterns: [
+            { hostname: 'images.unsplash.com' },
+            { hostname: 'lh3.googleusercontent.com' },
+            { hostname: 'gifdb.com' },
+        ],
+    },
 };
 
 module.exports = nextConfig;
