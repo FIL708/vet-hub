@@ -39,7 +39,6 @@ export default function UserDropdown() {
                     </li>
                     <li>
                         <Link href='/new-pet'>
-                            {' '}
                             <Paw className='fill-secondary' />
                             Dodaj zwierzaka
                         </Link>
@@ -49,8 +48,8 @@ export default function UserDropdown() {
                         <ThemeSwitcher />
                     </li>
                     <button className='btn btn-secondary'>
-                        <Google className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />{' '}
-                        Login
+                        <Google className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />
+                        Zaloguj
                     </button>
                 </ul>
             </div>
