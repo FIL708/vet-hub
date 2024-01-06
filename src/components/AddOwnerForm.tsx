@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { addOwner } from '@/lib/db/actions';
 import { OwnerFormData } from '@/types';
 import Plus from '@/assets/plus.svg';
+import SubmitButton from './SubmitButton';
 
 export default function AddOwnerForm() {
     const [formData, setFormData] = useState<OwnerFormData>({
@@ -64,10 +65,7 @@ export default function AddOwnerForm() {
                     />
                 </label>
             </div>
-            <button type='submit' className='btn btn-primary'>
-                <Plus className='fill-current' />
-                Dodaj właściciela
-            </button>
+            <SubmitButton />
         </form>
     );
 }
