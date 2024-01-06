@@ -16,7 +16,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang='pl' data-theme='fantasy'>
+        <html lang='pl' data-theme='dracula'>
             <body className={inter.className}>
                 <Header />
                 <main className='mt-8 flex flex-col items-center'>
