@@ -1,16 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { addOwner } from '@/lib/db/actions';
+import { addOwner } from '@/lib/actions';
 import { OwnerFormData } from '@/types';
-import Plus from '@/assets/plus.svg';
 import SubmitButton from './SubmitButton';
 
 export default function AddOwnerForm() {
     const [formData, setFormData] = useState<OwnerFormData>({
         firstName: '',
         lastName: '',
-        redirect: true,
+        redirected: true,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,9 +20,8 @@ export default function AddOwnerForm() {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    const onSubmit = () => {
-        console.log(formData);
-        addOwner(formData);
+    const onSubmit = async () => {
+        await addOwner(formData);
         setFormData((prev) => ({ ...prev, firstName: '', lastName: '' }));
     };
 
@@ -33,7 +31,7 @@ export default function AddOwnerForm() {
             action={onSubmit}
             className='flex w-full min-w-[300px] max-w-3xl flex-col gap-3 p-3'
         >
-            <h1 className='text-lg font-bold text-primary'>
+            <h1 className='text-xl font-bold text-primary'>
                 Dodaj nowego właściciela
             </h1>
             <input
@@ -57,10 +55,10 @@ export default function AddOwnerForm() {
                 <label className='label cursor-pointer'>
                     <span className='label-text'>Przekierować po dodaniu?</span>
                     <input
-                        name='redirect'
+                        name='redirected'
                         type='checkbox'
                         className='checkbox'
-                        checked={formData.redirect}
+                        checked={formData.redirected}
                         onChange={handleChange}
                     />
                 </label>
