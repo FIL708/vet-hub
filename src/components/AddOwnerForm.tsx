@@ -1,20 +1,15 @@
 'use client';
 
-import Plus from '@/assets/plus.svg';
-import { addOwner } from '@/lib/db/actions';
 import { useState } from 'react';
-
-interface OwnerFormData {
-    firstName: string;
-    lastName: string;
-    redirect: boolean;
-}
+import { addOwner } from '@/lib/db/actions';
+import { OwnerFormData } from '@/types';
+import Plus from '@/assets/plus.svg';
 
 export default function AddOwnerForm() {
     const [formData, setFormData] = useState<OwnerFormData>({
         firstName: '',
         lastName: '',
-        redirect: false,
+        redirect: true,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,19 +20,20 @@ export default function AddOwnerForm() {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    const add = (formData: FormData) => {
+    const onSubmit = () => {
+        console.log(formData);
         addOwner(formData);
-        const form = document.getElementById('owner-form') as HTMLFormElement;
-        form.reset();
+        setFormData((prev) => ({ ...prev, firstName: '', lastName: '' }));
     };
+
     return (
         <form
             id='owner-form'
-            action={add}
+            action={onSubmit}
             className='flex w-full min-w-[300px] max-w-3xl flex-col gap-3 p-3'
         >
             <h1 className='text-lg font-bold text-primary'>
-                Dodaj nowego właściciela {formData.redirect ? 'true' : 'false'}
+                Dodaj nowego właściciela
             </h1>
             <input
                 required
@@ -58,7 +54,7 @@ export default function AddOwnerForm() {
             />
             <div className='form-control'>
                 <label className='label cursor-pointer'>
-                    <span className='label-text'>Chcę dodać wiecej...</span>
+                    <span className='label-text'>Przekierować po dodaniu?</span>
                     <input
                         name='redirect'
                         type='checkbox'
