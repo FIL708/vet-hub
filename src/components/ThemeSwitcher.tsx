@@ -16,7 +16,7 @@ export default function ThemeSwitcher() {
             </svg>
             <input
                 type='checkbox'
-                value='fantasy'
+                value='winter'
                 className='theme-controller toggle'
             />
             <svg

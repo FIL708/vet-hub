@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '../components/Header';
+import SessionProvider from './SessionProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,10 +19,12 @@ export default function RootLayout({
     return (
         <html lang='pl' data-theme='dracula'>
             <body className={inter.className}>
-                <Header />
-                <main className='mt-8 flex flex-col items-center'>
-                    {children}
-                </main>
+                <SessionProvider>
+                    <Header />
+                    <main className='mt-8 flex flex-col items-center'>
+                        {children}
+                    </main>
+                </SessionProvider>
             </body>
         </html>
     );
