@@ -19,5 +19,15 @@ export async function addOwner(formData: OwnerFormData) {
 }
 
 export async function addPet(formData: PetFormData) {
-    console.log(formData);
+    const { name, species, redirected } = formData;
+
+    if (!name || !species) {
+        throw Error('Missing required fields');
+    }
+
+    await prisma.pet.create({ data: { name, species } });
+
+    if (redirected) {
+        redirect('/');
+    }
 }
