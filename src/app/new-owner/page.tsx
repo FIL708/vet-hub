@@ -1,4 +1,4 @@
-import AddOwnerForm from '@/components/AddOwnerForm';
+import AddOwnerForm from './AddOwnerForm';
 
 export const metadata = {
     title: 'VetHub - Nowy właściciel',

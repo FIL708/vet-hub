@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { addOwner } from '@/lib/actions';
 import { OwnerFormData } from '@/types';
-import SubmitButton from './SubmitButton';
+import SubmitButton from '../../components/SubmitButton';
 
 export default function AddOwnerForm() {
     const [formData, setFormData] = useState<OwnerFormData>({
@@ -27,7 +27,6 @@ export default function AddOwnerForm() {
 
     return (
         <form
-            id='owner-form'
             action={onSubmit}
             className='flex w-full min-w-[300px] max-w-3xl flex-col gap-3 p-3'
         >
