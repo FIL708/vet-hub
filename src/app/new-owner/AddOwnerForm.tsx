@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { addOwner } from '@/lib/actions';
 import { OwnerFormData } from '@/types';
 import SubmitButton from '../../components/SubmitButton';
@@ -12,7 +12,7 @@ export default function AddOwnerForm() {
         redirected: true,
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const name = e.target.name;
         const value =
             e.target.type === 'checkbox' ? e.target.checked : e.target.value;

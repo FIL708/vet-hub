@@ -3,7 +3,7 @@
 import { redirect } from 'next/navigation';
 import prisma from './db/prisma';
 
-import { OwnerFormData } from '@/types';
+import { OwnerFormData, PetFormData } from '@/types';
 
 export async function addOwner(formData: OwnerFormData) {
     const { firstName, lastName, redirected } = formData;
@@ -16,4 +16,8 @@ export async function addOwner(formData: OwnerFormData) {
     if (redirected) {
         redirect('/');
     }
+}
+
+export async function addPet(formData: PetFormData) {
+    console.log(formData);
 }
