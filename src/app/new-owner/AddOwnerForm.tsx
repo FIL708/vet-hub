@@ -41,6 +41,7 @@ export default function AddOwnerForm() {
                 value={formData.firstName}
                 onChange={handleChange}
             />
+
             <input
                 required
                 type='text'
@@ -50,6 +51,7 @@ export default function AddOwnerForm() {
                 value={formData.lastName}
                 onChange={handleChange}
             />
+
             <div className='form-control'>
                 <label className='label cursor-pointer'>
                     <span className='label-text'>Przekierować po dodaniu?</span>
@@ -62,7 +64,7 @@ export default function AddOwnerForm() {
                     />
                 </label>
             </div>
-            <SubmitButton />
+            <SubmitButton title='Dodaj właściciela' />
         </form>
     );
 }

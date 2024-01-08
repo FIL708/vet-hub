@@ -1,6 +1,24 @@
+'use client';
+
 import SubmitButton from '@/components/SubmitButton';
+import { useState } from 'react';
 
 export default function AddPetForm() {
+    useState;
+    const speciesArray = [
+        'pies',
+        'kot',
+        'koń',
+        'kawia',
+        'królik',
+        'chomik',
+        'inny',
+    ];
+    const optionsList = speciesArray.map((option) => (
+        <option key={option} value={option}>
+            {option}
+        </option>
+    ));
     return (
         <form
             action=''
@@ -15,13 +33,14 @@ export default function AddPetForm() {
                 placeholder='Imię'
                 className='input input-bordered w-full'
             />
-            <select className='select select-bordered w-full'>
-                <option disabled selected>
-                    Who shot first?
+
+            <select className='select select-bordered w-full' name='species'>
+                <option disabled selected value=''>
+                    Wybierz gatunek
                 </option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                {optionsList}
             </select>
+
             <div className='form-control'>
                 <label className='label cursor-pointer'>
                     <span className='label-text'>Przekierować po dodaniu?</span>
@@ -32,7 +51,7 @@ export default function AddPetForm() {
                     />
                 </label>
             </div>
-            <SubmitButton />
+            <SubmitButton title='Dodaj zwierzaka' />
         </form>
     );
 }

@@ -3,7 +3,11 @@
 import Plus from '@/assets/plus.svg';
 import { useFormStatus } from 'react-dom';
 
-function SubmitButton() {
+interface SubmitButtonProps {
+    title: string;
+}
+
+function SubmitButton({ title }: SubmitButtonProps) {
     const { pending } = useFormStatus();
     return (
         <button type='submit' className='btn btn-primary' disabled={pending}>
@@ -12,7 +16,7 @@ function SubmitButton() {
             ) : (
                 <Plus className='fill-current' />
             )}
-            Dodaj właściciela
+            {title}
         </button>
     );
 }
