@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import ThemeSwitcher from './ThemeSwitcher';
-import Google from '@/assets/google.svg';
+import AuthButton from './AuthButton';
 import Paw from '@/assets/paw.svg';
 import Person from '@/assets/person.svg';
 
-export default function UserDropdown() {
+export default async function UserDropdown() {
+    const session = await getServerSession(authOptions);
     return (
         <div className='navbar-end'>
             <div className='dropdown dropdown-end'>
@@ -47,10 +50,7 @@ export default function UserDropdown() {
                     <li>
                         <ThemeSwitcher />
                     </li>
-                    <button className='btn btn-secondary'>
-                        <Google className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />
-                        Zaloguj
-                    </button>
+                    <AuthButton session={session} />
                 </ul>
             </div>
         </div>
