@@ -30,6 +30,7 @@ const nextConfig = {
             { hostname: 'images.unsplash.com' },
             { hostname: 'lh3.googleusercontent.com' },
             { hostname: 'gifdb.com' },
+            { hostname: 'daisyui.com' },
         ],
     },
 };
