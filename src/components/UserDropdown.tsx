@@ -8,6 +8,7 @@ import Person from '@/assets/icons/person.svg';
 
 export default async function UserDropdown() {
     const session = await getServerSession(authOptions);
+    console.log(session);
     return (
         <div className='navbar-end'>
             <div className='dropdown dropdown-end'>

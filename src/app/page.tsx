@@ -13,6 +13,7 @@ export default function Home() {
                 width={100}
                 height={100}
                 className='w-full sm:w-1/2'
+                priority
             />
             <p className='text-justify text-lg'>
                 Aby korzystać z wszystkich atrakcji, musisz przywdziać swoją

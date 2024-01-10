@@ -27,6 +27,7 @@ export default function AddOwnerForm() {
 
     return (
         <form
+            id='add-owner-form'
             action={onSubmit}
             className='flex w-full min-w-[300px] max-w-3xl flex-col gap-3 p-3'
         >
