@@ -15,7 +15,7 @@ export default function AuthButton({ session }: AuthButtonProps) {
         <>
             {user ? (
                 <button
-                    className='btn btn-secondary'
+                    className='btn btn-secondary w-full'
                     onClick={() => signOut({ callbackUrl: '/' })}
                 >
                     <Logout className='h-6 w-6 fill-current' />
@@ -23,7 +23,7 @@ export default function AuthButton({ session }: AuthButtonProps) {
                 </button>
             ) : (
                 <button
-                    className='btn btn-secondary'
+                    className='btn btn-secondary w-full'
                     onClick={() => signIn('google')}
                 >
                     <Google className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />
