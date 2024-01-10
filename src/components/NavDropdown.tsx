@@ -1,3 +1,9 @@
+import Link from 'next/link';
+import Paw from '@/assets/paw.svg';
+import AddPerson from '@/assets/add-person.svg';
+import AddPet from '@/assets/add-pet.svg';
+import People from '@/assets/people.svg';
+
 export default function NavDropdown() {
     return (
         <div className='navbar-start'>
@@ -26,10 +32,29 @@ export default function NavDropdown() {
                     className='menu dropdown-content z-10 w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <a>Item 1</a>
+                        <Link href='/owners'>
+                            <People className='fill-secondary' />
+                            Lista nazwisk
+                        </Link>
                     </li>
                     <li>
-                        <a>Item 2</a>
+                        <Link href='/pets'>
+                            <AddPerson className='fill-secondary' />
+                            Lista zwierząt
+                        </Link>
+                    </li>
+                    <div className='divider divider-primary m-0'></div>
+                    <li>
+                        <Link href='/new-owner'>
+                            <AddPerson className='fill-secondary' />
+                            Dodaj właściciela
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/new-pet'>
+                            <AddPet className='fill-secondary' />
+                            Dodaj zwierzaka
+                        </Link>
                     </li>
                 </ul>
             </div>

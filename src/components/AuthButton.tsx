@@ -11,7 +11,6 @@ interface AuthButtonProps {
 
 export default function AuthButton({ session }: AuthButtonProps) {
     const user = session?.user;
-
     return (
         <>
             {user ? (
@@ -19,7 +18,7 @@ export default function AuthButton({ session }: AuthButtonProps) {
                     className='btn btn-secondary'
                     onClick={() => signOut({ callbackUrl: '/' })}
                 >
-                    <Logout className='h-6 w-6 rounded-full bg-base-100 p-[2px]' />
+                    <Logout className='h-6 w-6 fill-current' />
                     Wyloguj
                 </button>
             ) : (

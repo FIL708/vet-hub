@@ -63,7 +63,7 @@ export default function AddPetForm() {
                 value={formData.species}
                 onChange={handleChange}
             >
-                <option disabled selected value=''>
+                <option disabled value=''>
                     Wybierz gatunek
                 </option>
                 {optionsList}

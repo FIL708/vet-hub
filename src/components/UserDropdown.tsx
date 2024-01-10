@@ -46,7 +46,7 @@ export default async function UserDropdown() {
                             Dodaj zwierzaka
                         </Link>
                     </li>
-                    <div className='divider divider-primary m-0'></div>{' '}
+                    <div className='divider divider-primary m-0'></div>
                     <li>
                         <ThemeSwitcher />
                     </li>
