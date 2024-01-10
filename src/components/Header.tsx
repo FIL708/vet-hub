@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import NavDropdown from './NavDropdown';
 import UserDropdown from './UserDropdown';
-import Logo from '@/assets/logo.svg';
+import Logo from '@/assets/icons/logo.svg';
 
 export default function Header() {
     return (

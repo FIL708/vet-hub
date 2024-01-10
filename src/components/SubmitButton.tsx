@@ -1,6 +1,6 @@
 'use client';
 
-import Plus from '@/assets/plus.svg';
+import Plus from '@/assets/icons/plus.svg';
 import { useFormStatus } from 'react-dom';
 
 interface SubmitButtonProps {

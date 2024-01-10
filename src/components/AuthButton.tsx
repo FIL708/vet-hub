@@ -1,7 +1,7 @@
 'use client';
 
-import Google from '@/assets/google.svg';
-import Logout from '@/assets/logout.svg';
+import Google from '@/assets/icons/google.svg';
+import Logout from '@/assets/icons/logout.svg';
 import { Session } from 'next-auth';
 import { signIn, signOut } from 'next-auth/react';
 

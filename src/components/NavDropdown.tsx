@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Paw from '@/assets/paw.svg';
-import AddPerson from '@/assets/add-person.svg';
-import AddPet from '@/assets/add-pet.svg';
-import People from '@/assets/people.svg';
+import Pet from '@/assets/icons/pet.svg';
+import AddPerson from '@/assets/icons/add-person.svg';
+import AddPet from '@/assets/icons/add-pet.svg';
+import People from '@/assets/icons/people.svg';
 
 export default function NavDropdown() {
     return (
@@ -39,7 +39,7 @@ export default function NavDropdown() {
                     </li>
                     <li>
                         <Link href='/pets'>
-                            <AddPerson className='fill-secondary' />
+                            <Pet className='fill-secondary' />
                             Lista zwierząt
                         </Link>
                     </li>

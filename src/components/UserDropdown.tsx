@@ -3,8 +3,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import ThemeSwitcher from './ThemeSwitcher';
 import AuthButton from './AuthButton';
-import Paw from '@/assets/paw.svg';
-import Person from '@/assets/person.svg';
+import Pet from '@/assets/icons/pet.svg';
+import Person from '@/assets/icons/person.svg';
 
 export default async function UserDropdown() {
     const session = await getServerSession(authOptions);
@@ -42,7 +42,7 @@ export default async function UserDropdown() {
                     </li>
                     <li>
                         <Link href='/new-pet'>
-                            <Paw className='fill-secondary' />
+                            <Pet className='fill-secondary' />
                             Dodaj zwierzaka
                         </Link>
                     </li>
