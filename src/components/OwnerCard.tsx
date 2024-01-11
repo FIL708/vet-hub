@@ -17,7 +17,7 @@ export default function OwnerCard({ owner }: OwnerCardProps) {
                 </span>
             )}
 
-            <div className='flex w-80 flex-col gap-1 rounded-lg border border-neutral-300 bg-base-300 p-2 shadow-lg transition-shadow hover:shadow-xl'>
+            <div className='flex w-72 flex-col gap-1 rounded-lg border border-neutral-300 bg-base-300 p-2 shadow-lg transition-colors hover:border-primary'>
                 <div>
                     <strong className='text-lg'>{`${owner.firstName} ${owner.lastName}`}</strong>
                 </div>

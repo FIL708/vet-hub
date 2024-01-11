@@ -21,7 +21,7 @@ export default function RootLayout({
             <body className={inter.className}>
                 <SessionProvider>
                     <Header />
-                    <main className='mt-8 flex flex-col items-center'>
+                    <main className='mt-8 flex flex-col items-center gap-9'>
                         {children}
                     </main>
                 </SessionProvider>
