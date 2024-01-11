@@ -1,5 +1,5 @@
+import Avatar from '@/components/Avatar';
 import { OwnerWithUser } from '@/types';
-import Avatar from './Avatar';
 
 interface OwnerCardProps {
     owner: OwnerWithUser;

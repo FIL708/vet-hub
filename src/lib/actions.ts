@@ -17,11 +17,10 @@ export async function addOwner(formData: OwnerFormData) {
     if (!session) {
         throw Error('Authentication Required');
     }
-    for (let index = 0; index < 31; index++) {
-        await prisma.owner.create({
-            data: { firstName, lastName, authorId: session.user.id },
-        });
-    }
+
+    await prisma.owner.create({
+        data: { firstName, lastName, authorId: session.user.id },
+    });
 
     if (redirected) {
         redirect('/');
