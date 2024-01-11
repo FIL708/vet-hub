@@ -17,9 +17,10 @@ export default function Avatar({ src, width = '9' }: AvatarProps) {
             </div>
         );
     }
+
     return (
         <div className='avatar'>
-            <div className={`w-${width} rounded-full`}>
+            <div className={`w-${width} h-${width} rounded-full`}>
                 <Image src={src} width={20} height={20} alt='user avatar' />
             </div>
         </div>

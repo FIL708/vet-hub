@@ -9,6 +9,7 @@ export default async function NotPermittedPage() {
     if (session) {
         redirect('/');
     }
+
     return (
         <div className='flex flex-col items-center gap-4 px-4'>
             <h1 className='text-2xl font-bold text-primary'>Zaloguj się!</h1>
@@ -20,6 +21,7 @@ export default async function NotPermittedPage() {
                 className='w-full rounded-xl sm:max-w-xl'
                 priority
             />
+            <h2 className='text-2xl font-bold text-secondary'>401</h2>
             <p className='w-full text-justify font-medium sm:max-w-xl'>
                 Aby korzystać z wszystkich atrakcji, musisz przywdziać swoją
                 wirtualną maskę klauna! 🤡 Zaloguj się teraz i dołącz do

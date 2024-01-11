@@ -1,3 +1,5 @@
+import { Prisma } from '@prisma/client';
+
 export interface OwnerFormData {
     firstName: string;
     lastName: string;
@@ -17,3 +19,7 @@ export interface PetFormData {
         | '';
     redirected: boolean;
 }
+
+export type OwnerWithUser = Prisma.OwnerGetPayload<{
+    include: { author: true };
+}>;

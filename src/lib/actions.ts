@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth';
 import { prisma } from './db/prisma';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { OwnerFormData, PetFormData } from '@/types';
+import { OwnerFormData, OwnerWithUser, PetFormData } from '@/types';
 
 export async function addOwner(formData: OwnerFormData) {
     const session = await getServerSession(authOptions);
