@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth';
 import { prisma } from './db/prisma';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { OwnerFormData, OwnerWithUser, PetFormData } from '@/types';
+import { OwnerFormData, PetFormData } from '@/types';
 
 export async function addOwner(formData: OwnerFormData) {
     const session = await getServerSession(authOptions);
@@ -46,4 +46,16 @@ export async function addPet(formData: PetFormData) {
     if (redirected) {
         redirect('/');
     }
+}
+
+export async function getOwners() {
+    const [owners, count] = await prisma.$transaction([
+        prisma.owner.findMany({
+            include: {
+                author: true,
+            },
+        }),
+        prisma.owner.count(),
+    ]);
+    return { owners, count };
 }
