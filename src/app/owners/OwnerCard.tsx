@@ -25,11 +25,13 @@ export default async function OwnerCard({ owner, session }: OwnerCardProps) {
             <div className='flex w-72 flex-col gap-1 rounded-lg border border-neutral-300 bg-base-300 p-2 shadow-lg transition-colors hover:border-primary'>
                 <div className='flex items-center justify-between'>
                     <strong className='text-lg'>{`${owner.firstName} ${owner.lastName}`}</strong>
-                    <DeleteButton
-                        action={deleteOwner}
-                        authorId={owner.authorId}
-                        recordId={owner.id}
-                    />
+                    {isAuthorLoggedIn && (
+                        <DeleteButton
+                            action={deleteOwner}
+                            authorId={owner.authorId}
+                            recordId={owner.id}
+                        />
+                    )}
                 </div>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-1 text-sm'>
