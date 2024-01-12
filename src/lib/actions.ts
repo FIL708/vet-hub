@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import { prisma } from './db/prisma';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { OwnerFormData, PetFormData } from '@/types';
+import { revalidatePath } from 'next/cache';
 
 export async function addOwner(formData: OwnerFormData) {
     const session = await getServerSession(authOptions);
@@ -48,14 +49,22 @@ export async function addPet(formData: PetFormData) {
     }
 }
 
-export async function getOwners() {
-    const [owners, count] = await prisma.$transaction([
-        prisma.owner.findMany({
-            include: {
-                author: true,
-            },
-        }),
-        prisma.owner.count(),
-    ]);
-    return { owners, count };
+export async function deleteOwner(recordId: string, authorId: string | null) {
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        throw Error('Authentication Required');
+    }
+
+    if (authorId !== session?.user.id) {
+        throw Error('Operation not permitted');
+    }
+    const record = await prisma.owner.findUnique({ where: { id: recordId } });
+
+    if (!record) {
+        throw Error('Record not found');
+    }
+
+    await prisma.owner.delete({ where: { id: recordId } });
+    revalidatePath('/owner');
 }

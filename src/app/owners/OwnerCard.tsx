@@ -1,13 +1,18 @@
 import Avatar from '@/components/Avatar';
+import DeleteButton from '@/components/DeleteButton';
+import { deleteOwner } from '@/lib/actions';
 import { OwnerWithUser } from '@/types';
+import { Session } from 'next-auth';
 
 interface OwnerCardProps {
     owner: OwnerWithUser;
+    session: Session | null;
 }
 
-export default function OwnerCard({ owner }: OwnerCardProps) {
+export default async function OwnerCard({ owner, session }: OwnerCardProps) {
     const createdAt = new Date(owner.createdAt);
     const isNew = Date.now() - createdAt.getTime() < 1000 * 60 * 60 * 24 * 2;
+    const isAuthorLoggedIn = session?.user.id === owner.authorId;
 
     return (
         <div className='indicator'>
@@ -18,8 +23,13 @@ export default function OwnerCard({ owner }: OwnerCardProps) {
             )}
 
             <div className='flex w-72 flex-col gap-1 rounded-lg border border-neutral-300 bg-base-300 p-2 shadow-lg transition-colors hover:border-primary'>
-                <div>
+                <div className='flex items-center justify-between'>
                     <strong className='text-lg'>{`${owner.firstName} ${owner.lastName}`}</strong>
+                    <DeleteButton
+                        action={deleteOwner}
+                        authorId={owner.authorId}
+                        recordId={owner.id}
+                    />
                 </div>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-1 text-sm'>

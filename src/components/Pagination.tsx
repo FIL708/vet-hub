@@ -9,9 +9,12 @@ export default function Pagination({
     currentPage,
     totalPages,
 }: PaginationProps) {
+    if (totalPages < 2) return false;
+
     const maxPage = Math.min(totalPages, Math.max(currentPage + 4, 10));
     const minPage = Math.max(1, Math.min(currentPage - 5, maxPage - 9));
     const linksArray: JSX.Element[] = [];
+
     for (let page = minPage; page <= maxPage; page++) {
         linksArray.push(
             <Link
