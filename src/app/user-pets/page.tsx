@@ -1,15 +1,14 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import { prisma } from '@/lib/db/prisma';
 import { redirect } from 'next/navigation';
 import PetCard from '@/components/PetCard';
+import getUserSession from '@/lib/getUserSession';
 
 export const metadata = {
     title: 'VetHub - Twoje nazwiska',
 };
 
 export default async function UserPetsPage() {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     if (!session) {
         redirect('/not-permitted');
     }

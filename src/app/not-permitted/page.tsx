@@ -1,15 +1,14 @@
 import AuthButton from '@/components/AuthButton';
 import Image from 'next/image';
-import { authOptions } from '../api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
+import getUserSession from '@/lib/getUserSession';
 
 export const metadata = {
     title: 'VetHub - Zaloguj się!',
 };
 
 export default async function NotPermittedPage() {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     if (session) {
         redirect('/');
     }

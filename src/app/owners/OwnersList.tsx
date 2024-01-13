@@ -1,7 +1,6 @@
 import { prisma } from '@/lib/db/prisma';
 import OwnerCard from '@/components/OwnerCard';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+import getUserSession from '@/lib/getUserSession';
 
 interface OwnersListProps {
     currentPage: number;
@@ -12,7 +11,7 @@ export default async function OwnersList({
     currentPage,
     limit,
 }: OwnersListProps) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     const owners = await prisma.owner.findMany({
         include: {
             author: true,

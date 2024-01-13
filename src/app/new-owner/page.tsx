@@ -1,6 +1,5 @@
-import { getServerSession } from 'next-auth';
+import getUserSession from '@/lib/getUserSession';
 import AddOwnerForm from './AddOwnerForm';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 
 export const metadata = {
@@ -8,7 +7,7 @@ export const metadata = {
 };
 
 export default async function NewOwnerPage() {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     if (!session) {
         redirect('/not-permitted');
     }

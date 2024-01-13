@@ -1,15 +1,14 @@
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import ThemeSwitcher from './ThemeSwitcher';
 import AuthButton from './AuthButton';
 import Pet from '@/assets/icons/pet.svg';
 import Person from '@/assets/icons/person.svg';
 import Dropdown from '@/assets/icons/user-dropdown.svg';
 import Avatar from './Avatar';
+import getUserSession from '@/lib/getUserSession';
 
 export default async function UserDropdown() {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
 
     return (
         <div className='navbar-end'>

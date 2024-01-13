@@ -1,7 +1,6 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import { prisma } from '@/lib/db/prisma';
 import PetCard from '@/components/PetCard';
+import getUserSession from '@/lib/getUserSession';
 
 interface PetsListProps {
     currentPage: number;
@@ -9,7 +8,7 @@ interface PetsListProps {
 }
 
 export default async function PetsList({ currentPage, limit }: PetsListProps) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     const pets = await prisma.pet.findMany({
         include: {
             author: true,

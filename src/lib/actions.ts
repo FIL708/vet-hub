@@ -1,14 +1,13 @@
 'use server';
 
 import { redirect } from 'next/navigation';
-import { getServerSession } from 'next-auth';
 import { prisma } from './db/prisma';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { OwnerFormData, PetFormData } from '@/types';
 import { revalidatePath } from 'next/cache';
+import getUserSession from './getUserSession';
 
 export async function addOwner(formData: OwnerFormData) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     const { firstName, lastName, redirected } = formData;
 
     if (!firstName || !lastName) {
@@ -29,7 +28,7 @@ export async function addOwner(formData: OwnerFormData) {
 }
 
 export async function addPet(formData: PetFormData) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
     const { name, species, redirected } = formData;
 
     if (!name || !species) {
@@ -50,7 +49,7 @@ export async function addPet(formData: PetFormData) {
 }
 
 export async function deleteOwner(recordId: string, authorId: string | null) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
 
     if (!session) {
         throw Error('Authentication Required');
@@ -71,7 +70,7 @@ export async function deleteOwner(recordId: string, authorId: string | null) {
 }
 
 export async function deletePet(recordId: string, authorId: string | null) {
-    const session = await getServerSession(authOptions);
+    const session = await getUserSession();
 
     if (!session) {
         throw Error('Authentication Required');
