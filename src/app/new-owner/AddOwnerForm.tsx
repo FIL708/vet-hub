@@ -31,7 +31,7 @@ export default function AddOwnerForm() {
             action={onSubmit}
             className='flex w-full min-w-[300px] max-w-3xl flex-col gap-3 p-3'
         >
-            <h1 className='text-xl font-bold text-primary'>
+            <h1 className='text-2xl font-bold text-secondary'>
                 Dodaj nowego właściciela
             </h1>
             <input
