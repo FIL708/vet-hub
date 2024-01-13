@@ -21,7 +21,7 @@ export default function DeleteButton({
     };
     return (
         <button
-            className='btn btn-ghost btn-xs rounded-full'
+            className='btn btn-circle btn-ghost btn-sm'
             disabled={isPending}
             onClick={deleteRecord}
         >

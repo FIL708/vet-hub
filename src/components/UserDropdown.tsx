@@ -6,7 +6,6 @@ import AuthButton from './AuthButton';
 import Pet from '@/assets/icons/pet.svg';
 import Person from '@/assets/icons/person.svg';
 import Dropdown from '@/assets/icons/user-dropdown.svg';
-import Image from 'next/image';
 import Avatar from './Avatar';
 
 export default async function UserDropdown() {
