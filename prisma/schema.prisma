@@ -11,7 +11,7 @@ model Pet {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   species   String
-  craetedAt DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   author    User?    @relation(fields: [authorId], references: [id])
   authorId  String?  @db.ObjectId

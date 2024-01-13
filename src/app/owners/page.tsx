@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { prisma } from '@/lib/db/prisma';
 import Pagination from '@/components/Pagination';
-import Skeleton from './Skeleton';
+import CardSkeleton from '@/components/CardSkeleton';
 import OwnersList from './OwnersList';
 
 interface OwnersPageProps {
@@ -18,10 +18,12 @@ export default async function OwnersPage({
     return (
         <>
             <h1 className='text-2xl font-bold text-secondary'>Lista nazwisk</h1>
-            <Suspense fallback={<Skeleton />}>
+
+            <Suspense fallback={<CardSkeleton />}>
                 <OwnersList currentPage={currentPage} limit={pageSize} />
-                <Pagination currentPage={currentPage} totalPages={totalPages} />
             </Suspense>
+
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
         </>
     );
 }

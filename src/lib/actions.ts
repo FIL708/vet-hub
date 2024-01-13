@@ -66,5 +66,27 @@ export async function deleteOwner(recordId: string, authorId: string | null) {
     }
 
     await prisma.owner.delete({ where: { id: recordId } });
-    revalidatePath('/owner');
+
+    revalidatePath('/owners');
+}
+
+export async function deletePet(recordId: string, authorId: string | null) {
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        throw Error('Authentication Required');
+    }
+
+    if (authorId !== session?.user.id) {
+        throw Error('Operation not permitted');
+    }
+    const record = await prisma.pet.findUnique({ where: { id: recordId } });
+
+    if (!record) {
+        throw Error('Record not found');
+    }
+
+    await prisma.pet.delete({ where: { id: recordId } });
+
+    revalidatePath('/pets');
 }

@@ -23,3 +23,7 @@ export interface PetFormData {
 export type OwnerWithUser = Prisma.OwnerGetPayload<{
     include: { author: true };
 }>;
+
+export type PetWithUser = Prisma.PetGetPayload<{
+    include: { author: true };
+}>;
