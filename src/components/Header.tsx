@@ -5,7 +5,7 @@ import Logo from '@/assets/icons/logo.svg';
 
 export default function Header() {
     return (
-        <div className='navbar shadow-lg'>
+        <header className='navbar shadow-lg'>
             <NavDropdown />
             <div className='navbar-center'>
                 <Link
@@ -17,6 +17,6 @@ export default function Header() {
                 </Link>
             </div>
             <UserDropdown />
-        </div>
+        </header>
     );
 }

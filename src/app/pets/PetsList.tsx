@@ -19,7 +19,7 @@ export default async function PetsList({ currentPage, limit }: PetsListProps) {
         orderBy: { createdAt: 'desc' },
     });
     return (
-        <ul className='grid content-start gap-6 md:grid-cols-2 lg:min-h-[540px] lg:grid-cols-3'>
+        <ul className='grid min-h-[540px] content-start gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {pets.map((pet) => (
                 <li key={pet.id}>
                     <PetCard pet={pet} session={session} />

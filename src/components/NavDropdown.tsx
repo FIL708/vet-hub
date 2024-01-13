@@ -47,7 +47,7 @@ export default function NavDropdown() {
                     <li>
                         <Link href='/new-owner'>
                             <AddPerson className='fill-secondary' />
-                            Dodaj właściciela
+                            Dodaj nazwisko
                         </Link>
                     </li>
                     <li>

@@ -17,7 +17,7 @@ export default async function NewestSection() {
     ]);
 
     return (
-        <section>
+        <section className='my-6'>
             <h1 className='my-6 text-3xl font-bold text-primary'>
                 Ostatnio dodane
             </h1>

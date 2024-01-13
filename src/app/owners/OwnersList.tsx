@@ -23,7 +23,7 @@ export default async function OwnersList({
     });
 
     return (
-        <ul className='grid content-start gap-6 md:grid-cols-2 lg:h-[540px] lg:grid-cols-3'>
+        <ul className='grid min-h-[540px] content-start gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {owners.map((owner) => (
                 <li key={owner.id}>
                     <OwnerCard owner={owner} session={session} />

@@ -8,7 +8,7 @@ export default function StartSection() {
             <div className='hero-content flex-col lg:flex-row-reverse'>
                 <Image
                     src='https://images.unsplash.com/photo-1544289444-7992bb5e7e28?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                    className='max-w-[200px] rounded-lg shadow-2xl lg:max-w-2xl'
+                    className='h-auto max-w-[200px] rounded-lg shadow-2xl lg:max-w-2xl'
                     width={300}
                     height={500}
                     alt='start section picture'
