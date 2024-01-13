@@ -23,10 +23,10 @@ export default function Footer() {
                 <Link className='link-hover link' href='/owners'>
                     Lista nazwisk
                 </Link>
-                <Link className='link-hover link' href='/add-pet'>
+                <Link className='link-hover link' href='/new-pet'>
                     Dodaj zwierzaka
                 </Link>
-                <Link className='link-hover link' href='/add-owner'>
+                <Link className='link-hover link' href='/new-owner'>
                     Dodaj nazwisko
                 </Link>
             </nav>

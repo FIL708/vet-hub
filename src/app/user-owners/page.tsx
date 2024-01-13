@@ -22,7 +22,7 @@ export default async function UserOwnersPage() {
     return (
         <>
             <h1 className='my-6 text-2xl font-bold text-secondary'>
-                Dodane przez Ciebie zwierzaki
+                Twoje imiona zwierząt
             </h1>
             <ul className='grid min-h-[540px] content-start gap-6 md:grid-cols-2 lg:grid-cols-3'>
                 {owners.map((owner) => (
