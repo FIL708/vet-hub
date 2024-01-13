@@ -4,6 +4,10 @@ import { authOptions } from '../api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 
+export const metadata = {
+    title: 'VetHub - Zaloguj się!',
+};
+
 export default async function NotPermittedPage() {
     const session = await getServerSession(authOptions);
     if (session) {
@@ -21,7 +25,6 @@ export default async function NotPermittedPage() {
                 className='w-full rounded-xl sm:max-w-xl'
                 priority
             />
-            <h2 className='text-2xl font-bold text-secondary'>401</h2>
             <p className='w-full text-justify font-medium sm:max-w-xl'>
                 Aby korzystać z wszystkich atrakcji, musisz przywdziać swoją
                 wirtualną maskę klauna! 🤡 Zaloguj się teraz i dołącz do

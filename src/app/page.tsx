@@ -1,3 +1,4 @@
+import NewestSection from './NewestSection';
 import StartSection from './StartSection';
 
 export const metadata = {
@@ -8,6 +9,7 @@ export default function Home() {
     return (
         <>
             <StartSection />
+            <NewestSection />
         </>
     );
 }

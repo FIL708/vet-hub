@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { prisma } from '@/lib/db/prisma';
-import PetCard from './PetCard';
+import PetCard from '@/components/PetCard';
 
 interface PetsListProps {
     currentPage: number;

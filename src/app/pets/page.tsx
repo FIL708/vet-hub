@@ -4,6 +4,10 @@ import PetsList from './PetsList';
 import { prisma } from '@/lib/db/prisma';
 import Pagination from '@/components/Pagination';
 
+export const metadata = {
+    title: 'VetHub - Zwierzaki',
+};
+
 interface PetsPageProps {
     searchParams: { page: string };
 }

@@ -4,6 +4,10 @@ import Pagination from '@/components/Pagination';
 import CardSkeleton from '@/components/CardSkeleton';
 import OwnersList from './OwnersList';
 
+export const metadata = {
+    title: 'VetHub - Nazwiska',
+};
+
 interface OwnersPageProps {
     searchParams: { page: string };
 }

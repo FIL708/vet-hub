@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/db/prisma';
-import OwnerCard from './OwnerCard';
+import OwnerCard from '@/components/OwnerCard';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
