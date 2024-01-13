@@ -31,15 +31,15 @@ export default async function UserDropdown() {
                     className='menu dropdown-content z-[10] w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <Link href='/new-owner'>
+                        <Link href='/user-owners'>
                             <Person className='fill-secondary' />
-                            Dodaj typa
+                            Twoje nazwiska
                         </Link>
                     </li>
                     <li>
-                        <Link href='/new-pet'>
+                        <Link href='/user-pets'>
                             <Pet className='fill-secondary' />
-                            Dodaj zwierzaka
+                            Twoje zwierzaki
                         </Link>
                     </li>
                     <div className='divider divider-primary m-0'></div>
