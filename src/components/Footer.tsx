@@ -46,12 +46,12 @@ export default function Footer() {
                     >
                         <Facebook className='h-8 w-8 fill-current' />
                     </Link>
-                    <Link
-                        href=''
+                    <a
+                        href='mailto: filip.zebrowski4013@gmail.com'
                         className='btn btn-circle btn-outline rounded-full'
                     >
                         <Gmail className='h-8 w-8 fill-current' />
-                    </Link>
+                    </a>
                 </div>
             </nav>
         </footer>
