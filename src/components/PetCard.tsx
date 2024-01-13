@@ -6,12 +6,18 @@ import { PetWithUser } from '@/types';
 
 interface PetCardProps {
     pet: PetWithUser;
-    session: Session | null;
+    session?: Session | null;
+    indicator?: boolean;
 }
 
-export default function PetCard({ pet, session }: PetCardProps) {
+export default function PetCard({
+    pet,
+    session,
+    indicator = true,
+}: PetCardProps) {
     const createdAt = new Date(pet.createdAt);
-    const isNew = Date.now() - createdAt.getTime() < 1000 * 60 * 60 * 24 * 2;
+    const isNew =
+        Date.now() - createdAt.getTime() < 1000 * 60 * 60 * 24 * 2 && indicator;
     const isAuthorLoggedIn = session?.user.id === pet.authorId;
 
     return (

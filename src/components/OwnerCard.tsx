@@ -6,12 +6,18 @@ import { Session } from 'next-auth';
 
 interface OwnerCardProps {
     owner: OwnerWithUser;
-    session: Session | null;
+    session?: Session | null;
+    indicator?: boolean;
 }
 
-export default async function OwnerCard({ owner, session }: OwnerCardProps) {
+export default async function OwnerCard({
+    owner,
+    session,
+    indicator = true,
+}: OwnerCardProps) {
     const createdAt = new Date(owner.createdAt);
-    const isNew = Date.now() - createdAt.getTime() < 1000 * 60 * 60 * 24 * 2;
+    const isNew =
+        Date.now() - createdAt.getTime() < 1000 * 60 * 60 * 24 * 2 && indicator;
     const isAuthorLoggedIn = session?.user.id === owner.authorId;
 
     return (
