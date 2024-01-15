@@ -22,7 +22,10 @@ export default async function PetsPage({
                 Lista zwierząt
             </h1>
 
-            <Suspense fallback={<CardSkeleton pageSize={pageSize} />}>
+            <Suspense
+                key={page}
+                fallback={<CardSkeleton pageSize={pageSize} />}
+            >
                 <PetsList currentPage={currentPage} pageSize={pageSize} />
             </Suspense>
         </>
