@@ -8,6 +8,7 @@ export const metadata = {
 
 export default async function NewOwnerPage() {
     const session = await getUserSession();
+
     if (!session) {
         redirect('/not-permitted');
     }
