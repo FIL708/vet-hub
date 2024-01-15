@@ -1,4 +1,4 @@
-import CardSkeleton from '@/components/CardSkeleton';
+import CardSkeleton from '@/components/CardsSkeleton';
 import { Suspense } from 'react';
 import PetsList from './PetsList';
 import { prisma } from '@/lib/db/prisma';

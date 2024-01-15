@@ -48,6 +48,23 @@ export async function addPet(formData: PetFormData) {
     }
 }
 
+export async function getOwners(limit: number, current: number) {
+    const totalOwners = await prisma.owner.count();
+    const totalPages = Math.ceil(totalOwners / limit);
+
+    const owners = await prisma.owner.findMany({
+        include: {
+            author: true,
+        },
+        take: limit,
+        skip: (current - 1) * limit,
+        orderBy: { createdAt: 'desc' },
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    return { owners, totalPages };
+}
+
 export async function deleteOwner(recordId: string, authorId: string | null) {
     const session = await getUserSession();
 
