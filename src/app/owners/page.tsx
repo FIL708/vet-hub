@@ -15,6 +15,7 @@ export default async function OwnersPage({
 }: OwnersPageProps) {
     const currentPage = parseInt(page);
     const pageSize = 18;
+
     return (
         <>
             <h1 className='text-2xl font-bold text-secondary'>Lista nazwisk</h1>

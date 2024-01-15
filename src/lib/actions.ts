@@ -65,6 +65,23 @@ export async function getOwners(limit: number, current: number) {
     return { owners, totalPages };
 }
 
+export async function getPets(limit: number, current: number) {
+    const totalPets = await prisma.pet.count();
+    const totalPages = Math.ceil(totalPets / limit);
+
+    const pets = await prisma.pet.findMany({
+        include: {
+            author: true,
+        },
+        take: limit,
+        skip: (current - 1) * limit,
+        orderBy: { createdAt: 'desc' },
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    return { pets, totalPages };
+}
+
 export async function deleteOwner(recordId: string, authorId: string | null) {
     const session = await getUserSession();
 
