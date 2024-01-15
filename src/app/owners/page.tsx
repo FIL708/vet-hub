@@ -1,7 +1,5 @@
 import { Suspense } from 'react';
-import { prisma } from '@/lib/db/prisma';
-import Pagination from '@/components/Pagination';
-import CardSkeleton from '@/components/CardSkeleton';
+import CardsSkeleton from '@/components/CardsSkeleton';
 import OwnersList from './OwnersList';
 
 export const metadata = {
@@ -15,19 +13,19 @@ interface OwnersPageProps {
 export default async function OwnersPage({
     searchParams: { page = '1' },
 }: OwnersPageProps) {
-    const totalOwners = await prisma.owner.count();
-    const pageSize = 18;
     const currentPage = parseInt(page);
-    const totalPages = Math.ceil(totalOwners / pageSize);
+    const pageSize = 18;
+
     return (
         <>
             <h1 className='text-2xl font-bold text-secondary'>Lista nazwisk</h1>
 
-            <Suspense fallback={<CardSkeleton />}>
-                <OwnersList currentPage={currentPage} limit={pageSize} />
+            <Suspense
+                key={page}
+                fallback={<CardsSkeleton pageSize={pageSize} />}
+            >
+                <OwnersList currentPage={currentPage} pageSize={pageSize} />
             </Suspense>
-
-            <Pagination currentPage={currentPage} totalPages={totalPages} />
         </>
     );
 }

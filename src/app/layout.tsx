@@ -4,7 +4,6 @@ import './globals.css';
 import Header from '../components/Header';
 import SessionProvider from './SessionProvider';
 import Footer from '@/components/Footer';
-import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +22,7 @@ export default function RootLayout({
             <body className={`${inter.className} flex min-h-screen flex-col`}>
                 <SessionProvider>
                     <Header />
-                    <main className='my-9 flex flex-1 flex-col items-center gap-9'>
+                    <main className='mb-14 mt-10 flex flex-1 flex-col items-center gap-9'>
                         {children}
                     </main>
                     <Footer />

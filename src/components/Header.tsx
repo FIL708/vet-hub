@@ -2,8 +2,10 @@ import Link from 'next/link';
 import NavDropdown from './NavDropdown';
 import UserDropdown from './UserDropdown';
 import Logo from '@/assets/icons/logo.svg';
+import getUserSession from '@/lib/getUserSession';
 
-export default function Header() {
+export default async function Header() {
+    const session = await getUserSession();
     return (
         <header className='navbar shadow-lg'>
             <NavDropdown />
@@ -16,7 +18,7 @@ export default function Header() {
                     VetHub
                 </Link>
             </div>
-            <UserDropdown />
+            <UserDropdown session={session} />
         </header>
     );
 }

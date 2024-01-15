@@ -48,6 +48,38 @@ export async function addPet(formData: PetFormData) {
     }
 }
 
+export async function getOwners(limit: number, current: number) {
+    const totalOwners = await prisma.owner.count();
+    const totalPages = Math.ceil(totalOwners / limit);
+
+    const owners = await prisma.owner.findMany({
+        include: {
+            author: true,
+        },
+        take: limit,
+        skip: (current - 1) * limit,
+        orderBy: { createdAt: 'desc' },
+    });
+
+    return { owners, totalPages };
+}
+
+export async function getPets(limit: number, current: number) {
+    const totalPets = await prisma.pet.count();
+    const totalPages = Math.ceil(totalPets / limit);
+
+    const pets = await prisma.pet.findMany({
+        include: {
+            author: true,
+        },
+        take: limit,
+        skip: (current - 1) * limit,
+        orderBy: { createdAt: 'desc' },
+    });
+
+    return { pets, totalPages };
+}
+
 export async function deleteOwner(recordId: string, authorId: string | null) {
     const session = await getUserSession();
 
