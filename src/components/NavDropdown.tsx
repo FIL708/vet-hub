@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Pet from '@/assets/icons/pet.svg';
 import AddPerson from '@/assets/icons/add-person.svg';
@@ -5,6 +7,13 @@ import AddPet from '@/assets/icons/add-pet.svg';
 import People from '@/assets/icons/people.svg';
 
 export default function NavDropdown() {
+    const handleClick = () => {
+        const elem = document.activeElement as HTMLElement;
+        if (elem) {
+            elem?.blur();
+        }
+    };
+
     return (
         <div className='navbar-start'>
             <div className='dropdown'>
@@ -32,26 +41,26 @@ export default function NavDropdown() {
                     className='menu dropdown-content z-10 w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <Link href='/owners'>
+                        <Link onClick={handleClick} href='/owners'>
                             <People className='fill-secondary' />
                             Lista nazwisk
                         </Link>
                     </li>
                     <li>
-                        <Link href='/pets'>
+                        <Link onClick={handleClick} href='/pets'>
                             <Pet className='fill-secondary' />
                             Lista zwierząt
                         </Link>
                     </li>
                     <div className='divider divider-primary m-0'></div>
                     <li>
-                        <Link href='/new-owner'>
+                        <Link onClick={handleClick} href='/new-owner'>
                             <AddPerson className='fill-secondary' />
                             Dodaj nazwisko
                         </Link>
                     </li>
                     <li>
-                        <Link href='/new-pet'>
+                        <Link onClick={handleClick} href='/new-pet'>
                             <AddPet className='fill-secondary' />
                             Dodaj zwierzaka
                         </Link>

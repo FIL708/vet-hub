@@ -1,3 +1,6 @@
+'use client';
+
+import { Session } from 'next-auth';
 import Link from 'next/link';
 import ThemeSwitcher from './ThemeSwitcher';
 import AuthButton from './AuthButton';
@@ -5,10 +8,14 @@ import Pet from '@/assets/icons/pet.svg';
 import Person from '@/assets/icons/person.svg';
 import Dropdown from '@/assets/icons/user-dropdown.svg';
 import Avatar from './Avatar';
-import getUserSession from '@/lib/getUserSession';
 
-export default async function UserDropdown() {
-    const session = await getUserSession();
+export default function UserDropdown({ session }: { session: Session | null }) {
+    const handleClick = () => {
+        const elem = document.activeElement as HTMLElement;
+        if (elem) {
+            elem?.blur();
+        }
+    };
 
     return (
         <div className='navbar-end'>
@@ -29,13 +36,13 @@ export default async function UserDropdown() {
                     className='menu dropdown-content z-[10] w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <Link href='/user-owners'>
+                        <Link onClick={handleClick} href='/user-owners'>
                             <Person className='fill-secondary' />
                             Twoje nazwiska
                         </Link>
                     </li>
                     <li>
-                        <Link href='/user-pets'>
+                        <Link onClick={handleClick} href='/user-pets'>
                             <Pet className='fill-secondary' />
                             Twoje zwierzaki
                         </Link>
