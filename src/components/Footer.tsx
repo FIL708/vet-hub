@@ -1,6 +1,7 @@
 import Logo from '@/assets/icons/logo.svg';
 import Github from '@/assets/icons/github.svg';
 import Facebook from '@/assets/icons/facebook.svg';
+import Linkedin from '@/assets/icons/linkedin.svg';
 import Gmail from '@/assets/icons/gmail.svg';
 import Link from 'next/link';
 
@@ -41,6 +42,12 @@ export default function Footer() {
                         <Github className='h-8 w-8 fill-current' />
                     </Link>
                     <Link
+                        href='https://www.linkedin.com/in/filipzebrowski/'
+                        className='btn btn-circle btn-outline rounded-full'
+                    >
+                        <Linkedin className='h-10 w-10 fill-current' />
+                    </Link>
+                    <Link
                         href='https://www.facebook.com/f.zebrowski'
                         className='btn btn-circle btn-outline rounded-full'
                     >
@@ -50,7 +57,7 @@ export default function Footer() {
                         href='mailto: filip.zebrowski4013@gmail.com'
                         className='btn btn-circle btn-outline rounded-full'
                     >
-                        <Gmail className='h-8 w-8 fill-current' />
+                        <Gmail className='h-7 w-7 fill-current' />
                     </a>
                 </div>
             </nav>
