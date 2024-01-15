@@ -2,6 +2,7 @@ import { prisma } from '@/lib/db/prisma';
 import { redirect } from 'next/navigation';
 import PetCard from '@/components/PetCard';
 import getUserSession from '@/lib/getUserSession';
+import ListLayout from '@/components/ListLayout';
 
 export const metadata = {
     title: 'VetHub - Twoje nazwiska',
@@ -23,13 +24,13 @@ export default async function UserPetsPage() {
             <h1 className='my-6 text-2xl font-bold text-secondary'>
                 Twoje nazwiska
             </h1>
-            <ul className='grid min-h-[540px] content-start gap-6 md:grid-cols-2 lg:grid-cols-3'>
+            <ListLayout>
                 {pets.map((pet) => (
                     <li key={pet.id}>
                         <PetCard pet={pet} session={session} />
                     </li>
                 ))}
-            </ul>
+            </ListLayout>
         </>
     );
 }

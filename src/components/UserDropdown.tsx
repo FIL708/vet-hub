@@ -10,7 +10,7 @@ import Dropdown from '@/assets/icons/user-dropdown.svg';
 import Avatar from './Avatar';
 
 export default function UserDropdown({ session }: { session: Session | null }) {
-    const handleClick = () => {
+    const closeDropdown = () => {
         const elem = document.activeElement as HTMLElement;
         if (elem) {
             elem?.blur();
@@ -36,13 +36,13 @@ export default function UserDropdown({ session }: { session: Session | null }) {
                     className='menu dropdown-content z-[10] w-48 rounded-box border-2 border-base-300 bg-base-100 p-2 shadow-xl'
                 >
                     <li>
-                        <Link onClick={handleClick} href='/user-owners'>
+                        <Link onClick={closeDropdown} href='/user-owners'>
                             <Person className='fill-secondary' />
                             Twoje nazwiska
                         </Link>
                     </li>
                     <li>
-                        <Link onClick={handleClick} href='/user-pets'>
+                        <Link onClick={closeDropdown} href='/user-pets'>
                             <Pet className='fill-secondary' />
                             Twoje zwierzaki
                         </Link>

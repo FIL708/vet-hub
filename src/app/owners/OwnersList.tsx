@@ -2,6 +2,7 @@ import OwnerCard from '@/components/OwnerCard';
 import getUserSession from '@/lib/getUserSession';
 import Pagination from '@/components/Pagination';
 import { getOwners } from '@/lib/actions';
+import ListLayout from '@/components/ListLayout';
 
 interface OwnersListProps {
     currentPage: number;
@@ -17,13 +18,13 @@ export default async function OwnersList({
 
     return (
         <>
-            <ul className='grid min-h-[540px] content-start gap-6 md:grid-cols-2 lg:grid-cols-3'>
+            <ListLayout>
                 {owners.map((owner) => (
                     <li key={owner.id}>
                         <OwnerCard owner={owner} session={session} />
                     </li>
                 ))}
-            </ul>
+            </ListLayout>
             <Pagination currentPage={currentPage} totalPages={totalPages} />
         </>
     );
