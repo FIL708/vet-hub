@@ -60,7 +60,6 @@ export async function getOwners(limit: number, current: number) {
         skip: (current - 1) * limit,
         orderBy: { createdAt: 'desc' },
     });
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return { owners, totalPages };
 }
@@ -77,7 +76,6 @@ export async function getPets(limit: number, current: number) {
         skip: (current - 1) * limit,
         orderBy: { createdAt: 'desc' },
     });
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return { pets, totalPages };
 }

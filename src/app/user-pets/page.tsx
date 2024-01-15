@@ -21,7 +21,7 @@ export default async function UserPetsPage() {
     });
     return (
         <>
-            <h1 className='my-6 text-2xl font-bold text-secondary'>
+            <h1 className='text-2xl font-bold text-secondary'>
                 Twoje nazwiska
             </h1>
             <ListLayout>

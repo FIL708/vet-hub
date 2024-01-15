@@ -22,7 +22,7 @@ export default async function UserOwnersPage() {
 
     return (
         <>
-            <h1 className='my-6 text-2xl font-bold text-secondary'>
+            <h1 className='text-2xl font-bold text-secondary'>
                 Twoje imiona zwierząt
             </h1>
             <ListLayout>
