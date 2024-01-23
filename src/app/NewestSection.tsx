@@ -30,7 +30,7 @@ export default async function NewestSection() {
 
                 {owners.map((owner) => (
                     <li key={owner.id}>
-                        <OwnerCard owner={owner} />
+                        <OwnerCard owner={owner} indicator={false} />
                     </li>
                 ))}
             </ul>

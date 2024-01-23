@@ -17,6 +17,7 @@ export default async function NotPermittedPage() {
         <div className='flex flex-col items-center gap-4 px-4'>
             <h1 className='text-2xl font-bold text-primary'>Zaloguj się!</h1>
             <Image
+                unoptimized
                 src='https://gifdb.com/images/high/mr-rogers-wearing-clown-mask-xviiaxhhprrmredu.webp'
                 alt='clown gif'
                 width={100}
